@@ -76,6 +76,8 @@ export const UserAlbum: FC<UserAlbumProps> = ({ route, navigation }) => {
         <Heading>{album.title}</Heading>
       </Center>
       <FlatList
+        refreshing={isLoading}
+        onRefresh={fetchImages}
         data={images}
         ListEmptyComponent={<NoDataFiller />}
         ItemSeparatorComponent={() => <Divider />}
